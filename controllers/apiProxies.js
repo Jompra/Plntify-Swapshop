@@ -1,6 +1,6 @@
 const axios = require('axios')
-const { trefleToken, pexelsHeader } = require('../config/environment')
-const mapToken = 'pk.eyJ1IjoiYWlub2t5dG8iLCJhIjoiY2thNTVmcHo1MGp0NTNtb2FiMDN2Y2lsNSJ9.lYIXm2Oh9WpDzSysWqwnqA'
+const { trefleToken, pexelsHeader, mapToken } = require('../config/environment')
+
 
 async function getTrefleInfo(req, res) {
   try {

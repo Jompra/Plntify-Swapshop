@@ -92,11 +92,17 @@ class FormPlant extends React.Component {
   }
 
   handleUpload = async event => {
-    const data = new FormData()
+    try{
+          const data = new FormData()
     data.append('file', event.target.files[0])
     data.append('upload_preset', uploadPreset)
     const res = await axios.post(uploadUrl, data)
+    console.log(res.data)
     this.checkNaughtyImage(res.data.url)
+    } catch (err){
+      console.log('err=', err)
+    }
+
     
     // console.log(this.state.imageUrl)
     
