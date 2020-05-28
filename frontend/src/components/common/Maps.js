@@ -5,7 +5,7 @@ import 'mapbox-gl/dist/mapbox-gl.css' //? stylesheet
 import { getAllPlants } from '../../lib/api'
 import Select from 'react-select'
 
-const token = 'pk.eyJ1IjoiYWlub2t5dG8iLCJhIjoiY2thYmdqODRmMTY0aDJ5cDRvOWk1cTd6MyJ9.QIlx0yP5sKCZRAVrfrq3OA'
+const token = process.env.REACT_APP_MAPBOX_TOKEN
 const mapStyle = 'mapbox://styles/mapbox/light-v10'
 
 //?AK Styles for navigation controllers

@@ -1,6 +1,5 @@
 const axios = require('axios')
-const trefleToken = 'S2RkU2JTY2tqbjJPVUV6MFRsYmUvdz09'
-const pexelsHeader = { Authorization: '563492ad6f917000010000014e452efa91af4e33bf581f73e3eb261b' }
+const { trefleToken, pexelsHeader } = require('../config/environment')
 const mapToken = 'pk.eyJ1IjoiYWlub2t5dG8iLCJhIjoiY2thNTVmcHo1MGp0NTNtb2FiMDN2Y2lsNSJ9.lYIXm2Oh9WpDzSysWqwnqA'
 
 async function getTrefleInfo(req, res) {
