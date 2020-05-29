@@ -5,8 +5,8 @@ const mongoose = require('mongoose')
 const app = express()
 const logger = require('./lib/logger')
 const router = require('./config/routes')
-const port = 8000
-const dbURI = 'mongodb://localhost/plants-db3'
+const port = process.env.PORT || 8000
+const dbURI = process.env.MONGODB_URI || 'mongodb://localhost/plants-db3'
 
 mongoose.connect(
   dbURI,
