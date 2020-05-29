@@ -23,6 +23,7 @@ async function getLocation() {
   }
 }
 
+// * Returns a single random image URL out of the first 15 available on Pexels, Not the whole array
 async function photoSearch(req, res) {
   try {
     const randomNumber = Math.floor(Math.random() * 15)

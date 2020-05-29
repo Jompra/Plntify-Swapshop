@@ -1,20 +1,20 @@
 import React from 'react'
-import { getAllPlants } from '../../../lib/api'
 
+const imageUrlStart = 'https://res.cloudinary.com/jompra/image/upload/v1590686665/Plntify/'
 
 class HomeCards extends React.Component {
   state = {
     allPlants: [],
     plantImages: [
-      'https://cdn.shopify.com/s/files/1/0758/3437/products/Rubber_Tree_j_800x.jpg?v=1588070475',
-      'https://cdn.shopify.com/s/files/1/0758/3437/products/Bagonia_j_800x.jpg?v=1588069906',
-      'https://cdn.shopify.com/s/files/1/0758/3437/products/Devils_Ivy_j_600x.jpg?v=1588073704',
-      'https://cdn.shopify.com/s/files/1/0758/3437/products/Peace_Lily_j_600x.jpg?v=1588070744',
-      'https://cdn.shopify.com/s/files/1/0758/3437/products/Calathea_Medallion_600x.jpg?v=1588163139',
-      'https://cdn.shopify.com/s/files/1/0758/3437/products/Alacosia_j_600x.jpg?v=1588070019',
-      'https://cdn.shopify.com/s/files/1/0758/3437/products/180912-G_T_LupeWhiteLarge_001_600x.jpg?v=1587555061',
-      'https://cdn.shopify.com/s/files/1/0758/3437/products/Chinese_Money_Plant_j_600x.jpg?v=1588069154',
-      'https://cdn.shopify.com/s/files/1/0758/3437/products/Asparagus_Fern_fuzzy_j_600x.jpg?v=1588068258'
+      `${imageUrlStart}Asparagus_Fern_fuzzy_j_600x_xwzsoe.jpg`,
+      `${imageUrlStart}Chinese_Money_Plant_j_600x_gpkswt.jpg`,
+      `${imageUrlStart}180912-G_T_LupeWhiteLarge_001_600x_keqcdg.jpg`,
+      `${imageUrlStart}Calathea_Medallion_600x_quypyo.jpg`,
+      `${imageUrlStart}Alacosia_j_600x_roth7y.jpg`,
+      `${imageUrlStart}Peace_Lily_j_600x_cwjef4.jpg`,
+      `${imageUrlStart}Devils_Ivy_j_600x_haneng.jpg`,
+      `${imageUrlStart}Bagonia_j_800x_svqbyl.jpg`,
+      `${imageUrlStart}Rubber_Tree_j_800x_lvmknt.jpg`
     ]
   }
 

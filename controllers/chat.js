@@ -7,7 +7,7 @@ async function createChat(req, res) {
     const sender = await User.findById(senderId)
     const receiverId = req.params.receiverid
     const receiver = await User.findById(receiverId)
- 
+
     req.body.senderName = sender.name
     req.body.senderId = senderId
     req.body.receiverName = receiver.name

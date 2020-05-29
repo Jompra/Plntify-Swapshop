@@ -48,7 +48,7 @@ class PublicProfile extends React.Component {
     
     return (
       <section className="section m-scene">
-         <button className="button is-light" onClick={this.clicker}>Start Chat</button>
+         {/* <button className="button is-light" onClick={this.clicker}>Start Chat</button> */}
 
 {this.state.isChat &&
     <>

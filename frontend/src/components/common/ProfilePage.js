@@ -2,7 +2,7 @@ import React from 'react'
 import { getPortfolio, respondOffer, finishTrade } from '../../lib/api'
 import ProfileCard from '../common/ProfileCard'
 import { Link } from 'react-router-dom'
-import Chat from '../common/Chat'
+// import Chat from '../common/Chat'
 
 
 class ProfilePage extends React.Component {
@@ -23,7 +23,7 @@ class ProfilePage extends React.Component {
     isResponse: false,
     timeMessage: ''
   }
-  // THis function just get all the user portfolio
+  
   async componentDidMount() {
     try {
       const res = await getPortfolio()
