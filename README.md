@@ -2,7 +2,7 @@
 
 # Plntify
 
-Plntify is a Swapshop for housplants. It utilizes the MERN stack (MongoDB, Express, React, Node.js). Feel free to take a look at the projectdeployed on Heroku here [gkj.me.uk/plntify](https://gkj.me.uk/plntify).
+Plntify is a Swapshop for housplants. It utilizes the MERN stack (MongoDB, Express, React, Node.js). Feel free to take a look at the project deployed on Heroku here [gkj.me.uk/plntify](https://gkj.me.uk/plntify).
 
 ## Technologies Used
 * Node.js
@@ -39,7 +39,8 @@ To add a plant of your own, click 'Add your plant' on the top nav bar. and fill 
 Once this is added take a look at it in [My Profile](https://plntify.herokuapp.com/profile) from the nav bar.
 
 You can edit plants in your own portfolio from their respective page.
-Navigating to someone else's plant will allow you to make an offer to swap their plant for one that you own. Once you both accept the offer and discuss your plans to swap them, they will both be removed from their respective portfoios.
+Navigating to someone else's plant will allow you to make an offer to swap their plant for one that you own. Once you both accept the offer and discuss your plans to swap them, they will both be removed from their respective portfolios.
+
 <img src="https://github.com/Jompra/sei-group-project/blob/master/Readme%20Assets/Offer%20Box.png" alt="Make an Offer Box" width="250" />
 
 It's also possible to take a look at all of the plants in your area from the map view. Clicking on their cards will take you to the respective plant's page.
@@ -51,7 +52,7 @@ We started the project by putting together some basic wireframes using [Balsamiq
 
 ## Wins and individual contributions
 We found that as a group we worked best when we worked on individual components and pair coded only when we had a complex issue to solve. This meant that we could take ownership of what we were working on and bring in team member help when required. Although I was involved with every aspect of the project, the following components were where I took the lead:
-* Building homepage, and frontend Register and Login forms.
+* Building homepage, register and login forms.
 * Integrating the Trefle.io API for finding Scientific names.
 * Image upload and handling of image moderation to the add new plant form.
 * Using the height data to provide conversational text to the user.
