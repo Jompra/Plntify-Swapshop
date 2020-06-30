@@ -30,6 +30,7 @@ The project was completed by myself, [Aino Kytola](https://github.com/ainokyto),
 Sign up for a new account on the homepage.
 There's no email validation so don't worry about using correct details.
 ![Sign Up On the homepage](https://github.com/Jompra/sei-group-project/blob/master/Readme%20Assets/Sign%20Up.png)
+<img src="https://github.com/Jompra/sei-group-project/blob/master/Readme%20Assets/Sign%20Up.png" alt="Sign Up On the homepage" title="Sign Up On the homepage" width="250" />
 
 You'll then be taken to an index page of all of the plants that users have uploaded to the site. Fromhere you can take a look at individual plants by clicking their cards.
 ![Index Page Image](https://github.com/Jompra/sei-group-project/blob/master/Readme%20Assets/Index%20Page.png)
