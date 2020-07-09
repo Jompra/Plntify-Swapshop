@@ -33,7 +33,7 @@ I recommend that you use the deployed version [here](https://gkj.me.uk/plntify) 
 * `$ npm install` to install dependencies.
 * `$ open example.env` And change all of the placeholders to your own keys and tokens.
 * `$ mv example.env .env` to rename file.
-* If you would like users with 150 example plants between portfolios use `$ npm run seed` to fill database with example data and users.
+* If you would like four example with 150 plants spread between their portfolios use `$ npm run seed` to fill database with example data and users.
 * `$ cd frontend/` to move into frontend folder.
 * `$ npm install` to install dependencies.
 * `$ open example.env` And change all of the placeholders to your own keys and tokens.
@@ -73,6 +73,81 @@ Whilst exploring the possible options for the app we decided that we liked the i
 We started the project by putting together some basic wireframes using [Balsamiq](https://balsamiq.com/). This helped us all ensure we were working towards common goal.
 
 We split tasks up so that individual members could take ownership of specific functions. We came together as a group to solve merge conflicts, squash complex bugs, or when specific features were dependent on the work of another team member.
+
+## Code Examples
+I learnt about the many compnonents of the React Router. Below is a function that I wrote to count down a brogress bar and then automatically redirect the user to home.
+
+```javascript
+componentDidMount() {
+  const timeBeforeRedirect = 5000
+  this.getImage()
+  //After five seconds to fire render redirect
+  setTimeout(() => this.setState({redirect: true}), timeBeforeRedirect)
+  setInterval(() => this.progressReducer(this.state.progress), timeBeforeRedirect / 100)
+}
+// Smoothly reduces the page's progress bar.
+progressReducer = (currentNum) => {
+  if (this.state.progress >0){
+    const decrementedNumber = currentNum - 1
+  this.setState({progress: decrementedNumber})
+  }
+  
+}
+
+renderRedirect = () => {
+  if(this.state.redirect){
+    return <Redirect to="/" />
+  }
+}
+```
+
+The renderRedirect function is called from within the render method. This means that the state of redirect is checked every time the page is re-rendered.
+
+To avoid CORS issues we proxied the majority of our API calls by sending a POST request to our own backend which would then make the required GET or post requests to the third-party provider.
+
+```javascript
+async function getTrefleInfo(req, res) {
+  try {
+    const query = req.body.search
+    const response = await axios.get(`https://trefle.io/api/plants/?q=${query}&token=${trefleToken}`)
+    res.status(200).json(response.data)
+  } catch (err) {
+    res.json(err)
+  }
+}
+```
+
+To make sure that users do not end up in areas of the site that they are not authorised we created a secure route function to kick the user to home depending on whether there is a valid token saved in the user's local storage.
+
+```javascript
+import { Route, Redirect } from 'react-router-dom'
+import { isAuthenticated, logout } from '../../lib/auth'
+
+const SecureRoute = ({ component: Component, ...rest }) => {
+  if (isAuthenticated()) return <Route {...rest} component={Component} />
+  logout()
+  return <Redirect to="/" />
+}
+```
+
+The is authenticated function returns true or false if the get payload function returns a valid token from local storage.
+
+```javascript
+export const isAuthenticated = () => {
+  const payload = getPayload()
+  if (!payload) return false
+  const now = Math.round(Date.now() / 1000) // * works out the time RIGHT NOW
+  return now < payload.exp // * is RIGHT NOW earlier than EXPIRY TIME ON TOKEN
+}
+
+const getPayload = () => { // * returns the decoded data from the token or false
+  const token = getToken()
+  if (!token) return false
+  const parts = token.split('.')
+  if (parts.length < 3)  return false 
+  return JSON.parse(window.atob(parts[1]))
+}
+```
 
 ## Individual Contributions
 We found that as a group we worked best when we worked on individual components and pair coded only when we had a complex issue to solve. This meant that we could take ownership of what we were working on and bring in team member help when required. Although I was involved with every aspect of the project, the following components were where I took the lead:
