@@ -22,9 +22,6 @@ const amount = 150
 let treflePage = 1
 let pexelsPage = 1
 
-console.log('trefleToken = ', trefleToken)
-console.log('pexels = ', pexelsHeader)
-
 const getPlants = (page) => {
   setTimeout(async () => {
     if (commonNames.length >= amount) return
